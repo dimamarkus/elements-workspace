@@ -15,10 +15,18 @@ export const contactPage = {
     },
     {
       body:
-        "Enrollment is open. The dedicated waitlist form is being finalized, and the general contact details below are live now.",
+        "Enrollment is open. Use the waitlist form below and we'll be in touch as Fall 2026 enrollment moves forward.",
       title: "Join the Fall 2026 Waitlist",
     },
   ],
+  forms: {
+    contactDescription:
+      "If you'd rather start with a written message, send us the basics here and we'll follow up directly.",
+    contactTitle: "General inquiry",
+    waitlistDescription:
+      "Enrollment is open. Share your details and we'll follow up as Fall 2026 enrollment moves forward.",
+    waitlistTitle: "Fall 2026 waitlist",
+  },
   hero: {
     description: "Come see the space, meet the guides, bring your questions.",
     eyebrow: "Contact",

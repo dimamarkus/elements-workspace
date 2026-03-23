@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 import { ButtonLink } from "../../components/marketing/button-link";
 import { ContentCard } from "../../components/marketing/content-card";
+import { ContactForm } from "../../components/forms/contact-form";
+import { WaitlistForm } from "../../components/forms/waitlist-form";
 import { PageHero } from "../../components/marketing/page-hero";
 import { PhotoPlaceholder } from "../../components/marketing/photo-placeholder";
 import { SectionHeading } from "../../components/marketing/section-heading";
@@ -48,6 +50,32 @@ export default function ContactPage() {
       </SiteSection>
 
       <SiteSection tone="cream">
+        <div className="grid gap-8 xl:grid-cols-2">
+          <ContentCard tone="white">
+            <SectionHeading
+              description={contactPage.forms.waitlistDescription}
+              eyebrow="Waitlist"
+              title={contactPage.forms.waitlistTitle}
+            />
+            <div className="mt-6">
+              <WaitlistForm />
+            </div>
+          </ContentCard>
+
+          <ContentCard tone="white">
+            <SectionHeading
+              description={contactPage.forms.contactDescription}
+              eyebrow="Message"
+              title={contactPage.forms.contactTitle}
+            />
+            <div className="mt-6">
+              <ContactForm />
+            </div>
+          </ContentCard>
+        </div>
+      </SiteSection>
+
+      <SiteSection tone="white">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="space-y-5">
             <SectionHeading
