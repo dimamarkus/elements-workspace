@@ -1,21 +1,36 @@
 import type { Metadata } from "next";
 
-import { RoutePlaceholder } from "../../components/marketing/route-placeholder";
+import { FaqItem } from "../../components/marketing/faq-item";
+import { PageHero } from "../../components/marketing/page-hero";
+import { SiteSection } from "../../components/marketing/site-section";
+import { faqPage } from "../../content/pages/faq";
 
 export const metadata: Metadata = {
   title: "FAQ",
-  description:
-    "Read the common questions families ask about Elements Workspace, homeschooling, and enrollment.",
+  description: faqPage.seo.description,
 };
 
 export default function FaqPage() {
   return (
-    <main className="flex min-h-screen flex-1">
-      <RoutePlaceholder
-        description="This page will become the clearest answer hub for the questions families actually ask before they book a tour or apply."
-        eyebrow="FAQ"
-        title="Questions we actually get."
+    <main className="flex flex-1 flex-col">
+      <PageHero
+        className="bg-background pt-14 sm:pt-20"
+        description={faqPage.hero.description}
+        eyebrow={faqPage.hero.eyebrow}
+        title={faqPage.hero.title}
       />
+
+      <SiteSection tone="white">
+        <div className="space-y-4">
+          {faqPage.items.map((item) => (
+            <FaqItem
+              key={item.question}
+              answer={item.answer}
+              question={item.question}
+            />
+          ))}
+        </div>
+      </SiteSection>
     </main>
   );
 }
