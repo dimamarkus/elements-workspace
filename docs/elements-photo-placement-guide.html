@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elements Workspace — Photo Placement Guide for Dima</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #7D9D8C;
+    --sage-light: #EDF3F0;
+    --sage-dark: #4A6B5A;
+    --terra: #CF7F59;
+    --terra-light: #FBF0E8;
+    --cream: #F7F3E8;
+    --ink: #2A2822;
+    --ink-mid: #5C5952;
+    --ink-light: #9A9690;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: #EDEBE3; color: var(--ink); padding: 48px; }
+
+  .doc-header {
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(125,157,140,0.3);
+  }
+  .doc-title { font-family: 'Lora', serif; font-size: 28px; font-weight: 400; color: var(--ink); margin-bottom: 6px; }
+  .doc-sub { font-size: 13px; color: var(--ink-mid); font-weight: 300; }
+  .doc-note { margin-top: 12px; background: white; border-left: 3px solid var(--terra); padding: 10px 16px; border-radius: 0 8px 8px 0; font-size: 12px; color: var(--ink-mid); line-height: 1.6; }
+
+  .photo-grid { display: flex; flex-direction: column; gap: 40px; }
+
+  .photo-item { background: white; border-radius: 16px; padding: 32px; }
+  .photo-item-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; gap: 24px; }
+  .photo-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--terra); font-weight: 500; margin-bottom: 6px; }
+  .photo-title { font-family: 'Lora', serif; font-size: 18px; font-weight: 500; color: var(--ink); margin-bottom: 6px; }
+  .photo-location { font-size: 12px; color: var(--ink-mid); font-weight: 300; }
+  .photo-badge { background: var(--cream); border-radius: 20px; padding: 4px 14px; font-size: 11px; color: var(--ink-mid); white-space: nowrap; flex-shrink: 0; }
+
+  .photo-layout { display: grid; gap: 16px; margin-bottom: 20px; }
+  .layout-single { grid-template-columns: 1fr; }
+  .layout-wide-accent { grid-template-columns: 1.6fr 1fr; }
+  .layout-three { grid-template-columns: 1fr 1fr 1fr; }
+  .layout-two { grid-template-columns: 1fr 1fr; }
+  .layout-four { grid-template-columns: 1fr 1fr; }
+
+  .photo-placeholder {
+    background: var(--sage-light);
+    border-radius: 12px;
+    border: 2px dashed rgba(125,157,140,0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    text-align: center;
+    min-height: 180px;
+    position: relative;
+  }
+  .photo-placeholder.terra { background: var(--terra-light); border-color: rgba(207,127,89,0.4); }
+  .photo-placeholder.cream { background: var(--cream); border-color: rgba(90,89,82,0.2); }
+  .photo-placeholder.hold { background: #FFF3CD; border-color: #E6C96A; border-style: dashed; }
+  .photo-placeholder.tall { min-height: 280px; }
+  .photo-placeholder.short { min-height: 120px; }
+  .photo-placeholder.square { min-height: 200px; aspect-ratio: 1; }
+
+  .ph-icon { width: 40px; height: 40px; margin-bottom: 12px; opacity: 0.4; }
+  .ph-title { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 6px; }
+  .ph-desc { font-size: 11px; color: var(--ink-mid); font-weight: 300; line-height: 1.6; max-width: 200px; }
+  .ph-ratio { position: absolute; top: 10px; right: 10px; font-size: 10px; color: var(--ink-light); background: white; border-radius: 4px; padding: 2px 8px; }
+  .hold-tag { position: absolute; top: 10px; left: 10px; background: #E6A800; color: white; font-size: 9px; font-weight: 500; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .photo-specs { background: var(--cream); border-radius: 10px; padding: 16px 20px; }
+  .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  .spec-item { }
+  .spec-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--ink-light); margin-bottom: 3px; font-weight: 500; }
+  .spec-value { font-size: 12px; color: var(--ink); font-weight: 400; line-height: 1.5; }
+
+  .divider { border: none; border-top: 1px solid rgba(125,157,140,0.15); margin: 8px 0; }
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  <p class="doc-sub">Elements Workspace — Photo Placement Guide for Dima</p>
+  <h1 class="doc-title">All 8 Photo Placements</h1>
+  <div class="doc-note">
+    Every image placeholder below shows the exact location on the site, the recommended aspect ratio, and what the photo should contain. Photos marked <strong>⚠️ HOLD</strong> should not be published until Jenny confirms. All photos are real — no stock imagery anywhere.
+  </div>
+</div>
+
+<div class="photo-grid">
+
+  <!-- PHOTO 1: HERO -->
+  <div class="photo-item">
+    <div class="photo-item-header">
+      <div>
+        <p class="photo-label">Photo 1 · Homepage</p>
+        <p class="photo-title">Hero — Main Photo + Accent</p>
+        <p class="photo-location">Homepage · Hero section · Right column</p>
+      </div>
+      <span class="photo-badge">2 photos needed</span>
+    </div>
+    <div class="photo-layout layout-wide-accent">
+      <div class="photo-placeholder tall">
+        <svg class="ph-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="8" width="32" height="24" rx="3" stroke="#7D9D8C" stroke-width="1.5"/><circle cx="14" cy="18" r="4" stroke="#7D9D8C" stroke-width="1.5"/><path d="M4 28l8-6 6 5 6-4 12 7" stroke="#7D9D8C" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <p class="ph-title">Main hero photo</p>
+        <p class="ph-desc">Child or children actively engaged — working with materials, writing, building. Natural light. Not looking at camera.</p>
+        <span class="ph-ratio">4:3 or 3:2</span>
+      </div>
+      <div class="photo-placeholder terra">
+        <svg class="ph-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="8" width="32" height="24" rx="3" stroke="#CF7F59" stroke-width="1.5"/><circle cx="14" cy="18" r="4" stroke="#CF7F59" stroke-width="1.5"/><path d="M4 28l8-6 6 5 6-4 12 7" stroke="#CF7F59" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <p class="ph-title">Accent / second photo</p>
+        <p class="ph-desc">Outdoor moment, snack time, or community — something warm and candid.</p>
+        <span class="ph-ratio">1:1 or 4:3</span>
+      </div>
+    </div>
+    <div class="photo-specs">
+      <div class="specs-grid">
+        <div class="spec-item"><p class="spec-label">Orientation</p><p class="spec-value">Landscape (main) · Square or landscape (accent)</p></div>
+        <div class="spec-item"><p class="spec-label">Minimum size</p><p class="spec-value">1200 × 900px (main) · 600 × 600px (accent)</p></div>
+        <div class="spec-item"><p class="spec-label">Subject</p><p class="spec-value">Children at work · real concentration</p></div>
+        <div class="spec-item"><p class="spec-label">Light</p><p class="spec-value">Natural · warm · no flash</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO 2: STARBIRDS -->
+  <div class="photo-item">
+    <div class="photo-item-header">
+      <div>
+        <p class="photo-label">Photo 2 · Programs Page</p>
+        <p class="photo-title">Starbirds Program</p>
+        <p class="photo-location">Programs page · Starbirds section</p>
+      </div>
+      <span class="photo-badge">1 photo needed</span>
+    </div>
+    <div class="photo-layout layout-single">
+      <div class="photo-placeholder" style="min-height: 220px;">
+        <svg class="ph-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="8" width="32" height="24" rx="3" stroke="#7D9D8C" stroke-width="1.5"/><circle cx="14" cy="18" r="4" stroke="#7D9D8C" stroke-width="1.5"/><path d="M4 28l8-6 6 5 6-4 12 7" stroke="#7D9D8C" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <p class="ph-title">Starbirds-age child at work</p>
+        <p class="ph-desc">Ages 3–6. Practical life activity, art, sensory work, or outdoor moment. Real focus — not performing for camera.</p>
+        <span class="ph-ratio">16:9 or 3:2</span>
+      </div>
+    </div>
+    <div class="photo-specs">
+      <div class="specs-grid">
+        <div class="spec-item"><p class="spec-label">Subject age</p><p class="spec-value">3–6 years old</p></div>
+        <div class="spec-item"><p class="spec-label">Activity</p><p class="spec-value">Practical life · pouring · sorting · art · outdoor</p></div>
+        <div class="spec-item"><p class="spec-label">Minimum size</p><p class="spec-value">1200 × 675px</p></div>
+        <div class="spec-item"><p class="spec-label">Mood</p><p class="spec-value">Calm · concentrated · unhurried</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO 3: MOONSTONES -->
+  <div class="photo-item">
+    <div class="photo-item-header">
+      <div>
+        <p class="photo-label">Photo 3 · Programs Page</p>
+        <p class="photo-title">Moonstones Program</p>
+        <p class="photo-location">Programs page · Moonstones section</p>
+      </div>
+      <span class="photo-badge">1 photo needed</span>
+    </div>
+    <div class="photo-layout layout-single">
+      <div class="photo-placeholder terra" style="min-height: 220px;">
+        <svg class="ph-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="8" width="32" height="24" rx="3" stroke="#CF7F59" stroke-width="1.5"/><circle cx="14" cy="18" r="4" stroke="#CF7F59" stroke-width="1.5"/><path d="M4 28l8-6 6 5 6-4 12 7" stroke="#CF7F59" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <p class="ph-title">Moonstones-age child at work</p>
+        <p class="ph-desc">Ages 6–9. Reading, writing, math materials, or project work. Sustained focus. Not performance.</p>
+        <span class="ph-ratio">16:9 or 3:2</span>
+      </div>
+    </div>
+    <div class="photo-specs">
+      <div class="specs-grid">
+        <div class="spec-item"><p class="spec-label">Subject age</p><p class="spec-value">6–9 years old</p></div>
+        <div class="spec-item"><p class="spec-label">Activity</p><p class="spec-value">Reading · writing · math materials · project</p></div>
+        <div class="spec-item"><p class="spec-label">Minimum size</p><p class="spec-value">1200 × 675px</p></div>
+        <div class="spec-item"><p class="spec-label">Mood</p><p class="spec-value">Focused · serious · independent</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO 4 & 5: SUMMER CAMP -->
+  <div class="photo-item">
+    <div class="photo-item-header">
+      <div>
+        <p class="photo-label">Photos 4 & 5 · Summer Camp Page</p>
+        <p class="photo-title">Summer Camp Hero</p>
+        <p class="photo-location">Summer Camp page · Hero section</p>
+      </div>
+      <span class="photo-badge">2 photos needed</span>
+    </div>
+    <div class="photo-layout layout-wide-accent">
+      <div class="photo-placeholder" style="background: #EBF4FB; border-color: rgba(163,193,217,0.5); min-height: 240px;">
+        <svg class="ph-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="8" width="32" height="24" rx="3" stroke="#A3C1D9" stroke-width="1.5"/><circle cx="14" cy="18" r="4" stroke="#A3C1D9" stroke-width="1.5"/><path d="M4 28l8-6 6 5 6-4 12 7" stroke="#A3C1D9" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <p class="ph-title">Main summer hero photo</p>
+        <p class="ph-desc">Kids outdoors or at creative work. Summer energy. Natural light. Could be beach, outdoor play, or art activity.</p>
+        <span class="ph-ratio">4:3 or 3:2</span>
+      </div>
+      <div class="photo-placeholder" style="background: #EBF4FB; border-color: rgba(163,193,217,0.5);">
+        <svg class="ph-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="8" width="32" height="24" rx="3" stroke="#A3C1D9" stroke-width="1.5"/><circle cx="14" cy="18" r="4" stroke="#A3C1D9" stroke-width="1.5"/><path d="M4 28l8-6 6 5 6-4 12 7" stroke="#A3C1D9" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <p class="ph-title">Beach or nature scene</p>
+        <p class="ph-desc">Gerritsen Beach. Water, sand, or nature — establishes location. Can be without children if needed.</p>
+        <span class="ph-ratio">1:1 or 4:3</span>
+      </div>
+    </div>
+    <div class="photo-specs">
+      <div class="specs-grid">
+        <div class="spec-item"><p class="spec-label">Subject age</p><p class="spec-value">6–11 years old</p></div>
+        <div class="spec-item"><p class="spec-label">Setting</p><p class="spec-value">Outdoors · beach · nature · creative activity</p></div>
+        <div class="spec-item"><p class="spec-label">Minimum size</p><p class="spec-value">1200 × 900px (main) · 600 × 600px (accent)</p></div>
+        <div class="spec-item"><p class="spec-label">Mood</p><p class="spec-value">Summer · exploratory · relaxed · genuine</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO 6: GUIDE PLACEHOLDER (HOLD) -->
+  <div class="photo-item">
+    <div class="photo-item-header">
+      <div>
+        <p class="photo-label">Photo 6 · Summer Camp Page</p>
+        <p class="photo-title">Lead Guide Photo</p>
+        <p class="photo-location">Summer Camp page · Your Guide section</p>
+      </div>
+      <span class="photo-badge" style="background: #FFF3CD; color: #6B4E00;">⚠️ On hold</span>
+    </div>
+    <div class="photo-layout layout-single">
+      <div class="photo-placeholder hold" style="min-height: 200px; max-width: 320px;">
+        <div class="hold-tag">Hold — do not publish</div>
+        <svg class="ph-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="15" r="7" stroke="#E6A800" stroke-width="1.5"/><path d="M6 36c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#E6A800" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <p class="ph-title" style="color: #6B4E00;">Ms. Josie — guide photo</p>
+        <p class="ph-desc" style="color: #8B6914;">Headshot or warm candid. Publish only after Jenny confirms commitment letter is signed.</p>
+      </div>
+    </div>
+    <div class="photo-specs" style="background: #FFF3CD;">
+      <div class="specs-grid">
+        <div class="spec-item"><p class="spec-label">Type</p><p class="spec-value">Headshot or candid — warm, approachable</p></div>
+        <div class="spec-item"><p class="spec-label">Orientation</p><p class="spec-value">Portrait preferred · 2:3 or 3:4</p></div>
+        <div class="spec-item"><p class="spec-label">Minimum size</p><p class="spec-value">600 × 800px</p></div>
+        <div class="spec-item"><p class="spec-label">Status</p><p class="spec-value">⚠️ Jenny to provide when letter is signed</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO 7: ABOUT / SPACE -->
+  <div class="photo-item">
+    <div class="photo-item-header">
+      <div>
+        <p class="photo-label">Photos 7a–7e · About Page</p>
+        <p class="photo-title">The Space — Interior Photos</p>
+        <p class="photo-location">About page · The Space section</p>
+      </div>
+      <span class="photo-badge">3–5 photos needed</span>
+    </div>
+    <div class="photo-layout layout-four" style="grid-template-columns: 1fr 1fr;">
+      <div class="photo-placeholder" style="min-height: 160px;">
+        <svg class="ph-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="8" width="32" height="24" rx="3" stroke="#7D9D8C" stroke-width="1.5"/><circle cx="14" cy="18" r="4" stroke="#7D9D8C" stroke-width="1.5"/><path d="M4 28l8-6 6 5 6-4 12 7" stroke="#7D9D8C" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <p class="ph-title">Learning room</p>
+        <p class="ph-desc">Materials on shelves, organized work surfaces, natural light.</p>
+      </div>
+      <div class="photo-placeholder" style="min-height: 160px;">
+        <svg class="ph-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="8" width="32" height="24" rx="3" stroke="#7D9D8C" stroke-width="1.5"/><circle cx="14" cy="18" r="4" stroke="#7D9D8C" stroke-width="1.5"/><path d="M4 28l8-6 6 5 6-4 12 7" stroke="#7D9D8C" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <p class="ph-title">Common room</p>
+        <p class="ph-desc">Community table, welcoming entry space, or snack area.</p>
+      </div>
+      <div class="photo-placeholder terra" style="min-height: 160px;">
+        <svg class="ph-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="8" width="32" height="24" rx="3" stroke="#CF7F59" stroke-width="1.5"/><circle cx="14" cy="18" r="4" stroke="#CF7F59" stroke-width="1.5"/><path d="M4 28l8-6 6 5 6-4 12 7" stroke="#CF7F59" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <p class="ph-title">Materials detail</p>
+        <p class="ph-desc">Close-up of Montessori materials, books, or hands-on tools.</p>
+      </div>
+      <div class="photo-placeholder terra" style="min-height: 160px;">
+        <svg class="ph-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="8" width="32" height="24" rx="3" stroke="#CF7F59" stroke-width="1.5"/><circle cx="14" cy="18" r="4" stroke="#CF7F59" stroke-width="1.5"/><path d="M4 28l8-6 6 5 6-4 12 7" stroke="#CF7F59" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <p class="ph-title">Outdoor / co-working</p>
+        <p class="ph-desc">Outdoor access or co-working space — shows full environment.</p>
+      </div>
+    </div>
+    <div class="photo-specs">
+      <div class="specs-grid">
+        <div class="spec-item"><p class="spec-label">Subject</p><p class="spec-value">Space, materials, environment — not children</p></div>
+        <div class="spec-item"><p class="spec-label">Style</p><p class="spec-value">Real, not staged. Light and airy. No clutter.</p></div>
+        <div class="spec-item"><p class="spec-label">Minimum size</p><p class="spec-value">1000 × 750px each</p></div>
+        <div class="spec-item"><p class="spec-label">Count</p><p class="spec-value">3 minimum · 5 ideal</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO 8: JENNY -->
+  <div class="photo-item">
+    <div class="photo-item-header">
+      <div>
+        <p class="photo-label">Photo 8 · Our Team Page</p>
+        <p class="photo-title">Jenny — Founder</p>
+        <p class="photo-location">Our Team page · Founder section</p>
+      </div>
+      <span class="photo-badge">1 photo needed</span>
+    </div>
+    <div class="photo-layout layout-single">
+      <div class="photo-placeholder cream" style="min-height: 200px; max-width: 300px;">
+        <svg class="ph-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="15" r="7" stroke="#5C5952" stroke-width="1.5"/><path d="M6 36c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#5C5952" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <p class="ph-title">Jenny — headshot or candid</p>
+        <p class="ph-desc">Warm, approachable. Can be in the space or outdoors. Doesn't need to be a formal headshot.</p>
+      </div>
+    </div>
+    <div class="photo-specs">
+      <div class="specs-grid">
+        <div class="spec-item"><p class="spec-label">Type</p><p class="spec-value">Headshot or warm candid</p></div>
+        <div class="spec-item"><p class="spec-label">Orientation</p><p class="spec-value">Portrait · 2:3 or 3:4</p></div>
+        <div class="spec-item"><p class="spec-label">Minimum size</p><p class="spec-value">600 × 800px</p></div>
+        <div class="spec-item"><p class="spec-label">Setting</p><p class="spec-value">In the space or outdoors — natural</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOLD NOTE: JOSIE TEAM PAGE -->
+  <div class="photo-item">
+    <div class="photo-item-header">
+      <div>
+        <p class="photo-label">Photo 9 · Our Team Page</p>
+        <p class="photo-title">Ms. Josie — Lead Guide, Moonstones</p>
+        <p class="photo-location">Our Team page · Guides section</p>
+      </div>
+      <span class="photo-badge" style="background: #FFF3CD; color: #6B4E00;">⚠️ On hold</span>
+    </div>
+    <div class="photo-layout layout-single">
+      <div class="photo-placeholder hold" style="min-height: 200px; max-width: 300px;">
+        <div class="hold-tag">Hold — do not publish</div>
+        <svg class="ph-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="15" r="7" stroke="#E6A800" stroke-width="1.5"/><path d="M6 36c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#E6A800" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <p class="ph-title" style="color: #6B4E00;">Ms. Josie — guide photo</p>
+        <p class="ph-desc" style="color: #8B6914;">Same photo as summer camp guide section. Jenny will provide and confirm when commitment letter is signed.</p>
+      </div>
+    </div>
+    <div class="photo-specs" style="background: #FFF3CD;">
+      <div class="specs-grid">
+        <div class="spec-item"><p class="spec-label">Type</p><p class="spec-value">Headshot or candid — same as Summer Camp</p></div>
+        <div class="spec-item"><p class="spec-label">Note</p><p class="spec-value">Can use same photo in both locations</p></div>
+        <div class="spec-item"><p class="spec-label">Status</p><p class="spec-value">⚠️ Jenny to provide when ready</p></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(125,157,140,0.3); font-size: 12px; color: var(--ink-light);">
+  Elements Workspace · Photo Placement Guide for Dima · March 2026 · All photos to be provided by Jenny except where noted
+</div>
+
+</body>
+</html>
