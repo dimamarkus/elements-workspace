@@ -9,11 +9,13 @@ import { SectionHeading } from "../../components/marketing/section-heading";
 import { SiteSection } from "../../components/marketing/site-section";
 import { programsPage } from "../../content/pages/programs";
 import { mediaSlots } from "../../content/shared/media";
+import { createPageMetadata } from "../../lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Our Programs",
+export const metadata: Metadata = createPageMetadata({
   description: programsPage.seo.description,
-};
+  path: "/programs",
+  title: "Our Programs",
+});
 
 export default function ProgramsPage() {
   return (

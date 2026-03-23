@@ -8,11 +8,13 @@ import { SectionHeading } from "../../components/marketing/section-heading";
 import { SiteSection } from "../../components/marketing/site-section";
 import { summerCampPage } from "../../content/pages/summer-camp";
 import { mediaSlots } from "../../content/shared/media";
+import { createPageMetadata } from "../../lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Summer Camp",
+export const metadata: Metadata = createPageMetadata({
   description: summerCampPage.seo.description,
-};
+  path: "/summer-camp",
+  title: "Summer Camp",
+});
 
 export default function SummerCampPage() {
   return (

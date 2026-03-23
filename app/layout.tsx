@@ -3,6 +3,13 @@ import { DM_Sans, Lora } from "next/font/google";
 
 import { SiteFooter } from "../components/marketing/site-footer";
 import { SiteHeader } from "../components/marketing/site-header";
+import { JsonLd } from "../components/seo/json-ld";
+import { siteUrl } from "../content/shared/site";
+import { defaultSiteMetadata } from "../lib/seo/metadata";
+import {
+  createLocalBusinessJsonLd,
+  createWebsiteJsonLd,
+} from "../lib/seo/structured-data";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -19,13 +26,12 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://elementsworkspace.com"),
+  ...defaultSiteMetadata,
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Elements Workspace",
     template: "%s | Elements Workspace",
   },
-  description:
-    "A Montessori-inspired enrichment center for homeschooling families in Brooklyn. Cozy in size. Serious about learning. Deep in community.",
 };
 
 export default function RootLayout({
@@ -36,6 +42,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} ${lora.variable} h-full`}>
       <body className="flex min-h-full flex-col antialiased">
+        <JsonLd data={createWebsiteJsonLd()} />
+        <JsonLd data={createLocalBusinessJsonLd()} />
         <SiteHeader />
         {children}
         <SiteFooter />

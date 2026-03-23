@@ -9,6 +9,7 @@ export type CallToAction = {
 };
 
 export const siteName = "Elements Workspace";
+export const siteUrl = "https://elementsworkspace.com";
 
 export const siteDescription =
   "A Montessori-inspired enrichment center for homeschooling families in Brooklyn. Cozy in size. Serious about learning. Deep in community.";
@@ -39,10 +40,15 @@ export const navigationItems: NavigationItem[] = [
 
 export const contactDetails = {
   address: "2934 Gerritsen Ave, 2nd floor, Brooklyn, NY 11229",
+  areaServed:
+    "Gerritsen Beach, Marine Park, Sheepshead Bay, Homecrest, Mill Basin, Bergen Beach and surrounding neighborhoods via the B31.",
   email: "jenny@elementsworkspace.com",
   instagramHandle: "@elementsworkspace",
   instagramUrl: "https://instagram.com/elementsworkspace",
+  locality: "Brooklyn",
+  postalCode: "11229",
   phone: "646-780-9062",
+  region: "NY",
   sponsorNote:
     "© 2026 Elements Workspace. Fiscally sponsored by Metsada, a 501(c)(3) nonprofit.",
 };

@@ -11,11 +11,13 @@ import { SiteSection } from "../../components/marketing/site-section";
 import { contactPage } from "../../content/pages/contact";
 import { mediaSlots } from "../../content/shared/media";
 import { contactDetails } from "../../content/shared/site";
+import { createPageMetadata } from "../../lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Contact",
+export const metadata: Metadata = createPageMetadata({
   description: contactPage.seo.description,
-};
+  path: "/contact",
+  title: "Contact",
+});
 
 export default function ContactPage() {
   return (

@@ -8,11 +8,13 @@ import { SiteSection } from "../../components/marketing/site-section";
 import { aboutPage } from "../../content/pages/about";
 import { mediaSlots } from "../../content/shared/media";
 import { contactDetails } from "../../content/shared/site";
+import { createPageMetadata } from "../../lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "About Us",
+export const metadata: Metadata = createPageMetadata({
   description: aboutPage.seo.description,
-};
+  path: "/about",
+  title: "About Us",
+});
 
 export default function AboutPage() {
   return (

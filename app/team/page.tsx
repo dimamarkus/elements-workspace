@@ -8,11 +8,13 @@ import { SectionHeading } from "../../components/marketing/section-heading";
 import { SiteSection } from "../../components/marketing/site-section";
 import { teamPage } from "../../content/pages/team";
 import { mediaSlots } from "../../content/shared/media";
+import { createPageMetadata } from "../../lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Our Team",
+export const metadata: Metadata = createPageMetadata({
   description: teamPage.seo.description,
-};
+  path: "/team",
+  title: "Our Team",
+});
 
 export default function TeamPage() {
   return (

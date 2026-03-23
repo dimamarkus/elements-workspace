@@ -7,11 +7,13 @@ import { PhotoPlaceholder } from "../components/marketing/photo-placeholder";
 import { SiteSection } from "../components/marketing/site-section";
 import { homePage } from "../content/pages/home";
 import { mediaSlots } from "../content/shared/media";
+import { createPageMetadata } from "../lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Homeschool Enrichment Center in Gerritsen Beach, Brooklyn",
+export const metadata: Metadata = createPageMetadata({
   description: homePage.seo.description,
-};
+  path: "/",
+  title: "Homeschool Enrichment Center in Gerritsen Beach, Brooklyn",
+});
 
 export default function Home() {
   return (
