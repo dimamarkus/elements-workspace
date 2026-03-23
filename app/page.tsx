@@ -1,11 +1,14 @@
+import { ButtonLink } from "../components/marketing/button-link";
+import { Eyebrow } from "../components/marketing/eyebrow";
+import { SiteContainer } from "../components/marketing/site-container";
+import { primaryCta, secondaryCta } from "../content/shared/site";
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-1">
-      <section className="mx-auto flex w-full max-w-6xl flex-col justify-center gap-10 px-6 py-24 sm:px-8 lg:px-12">
-        <div className="space-y-4">
-          <p className="text-sm font-medium uppercase tracking-[0.24em] text-terra">
-            Elements Workspace
-          </p>
+      <SiteContainer className="flex flex-col justify-center gap-10 py-24">
+        <section className="space-y-4">
+          <Eyebrow>Elements Workspace</Eyebrow>
           <h1 className="max-w-4xl font-display text-5xl leading-none text-balance text-foreground sm:text-6xl lg:text-7xl">
             A place for homeschooling families in Brooklyn.
           </h1>
@@ -13,9 +16,16 @@ export default function Home() {
             The build foundation is now in place. Next up: brand primitives,
             typed content, and the full homepage structure from the roadmap.
           </p>
+        </section>
+
+        <div className="flex flex-wrap gap-3">
+          <ButtonLink href={primaryCta.href}>{primaryCta.label}</ButtonLink>
+          <ButtonLink href={secondaryCta.href} variant="secondary">
+            {secondaryCta.label}
+          </ButtonLink>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <section className="grid gap-4 md:grid-cols-3">
           <div className="rounded-3xl border border-border-soft bg-white/70 p-6">
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-sage-dark">
               Stack
@@ -43,8 +53,8 @@ export default function Home() {
               real content build.
             </p>
           </div>
-        </div>
-      </section>
+        </section>
+      </SiteContainer>
     </main>
   );
 }

@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { DM_Sans, Lora } from "next/font/google";
+
+import { SiteFooter } from "../components/marketing/site-footer";
+import { SiteHeader } from "../components/marketing/site-header";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -32,7 +35,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dmSans.variable} ${lora.variable} h-full`}>
-      <body className="flex min-h-full flex-col antialiased">{children}</body>
+      <body className="flex min-h-full flex-col antialiased">
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   );
 }
