@@ -16,9 +16,25 @@ type MobileNavProps = {
 
 export function MobileNav({ ctaHref, ctaLabel, items }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const descriptionId = useId();
   const titleId = useId();
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      setIsMounted(false);
+    }, 300);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -59,80 +75,82 @@ export function MobileNav({ ctaHref, ctaLabel, items }: MobileNavProps) {
         {isOpen ? "Close" : "Menu"}
       </button>
 
-      <div
-        aria-hidden={!isOpen}
-        className={cn(
-          "fixed inset-0 z-50 md:hidden",
-          isOpen ? "pointer-events-auto" : "pointer-events-none",
-        )}
-      >
-        <button
-          aria-label="Close navigation menu"
-          className={cn(
-            "absolute inset-0 bg-foreground/12 backdrop-blur-sm transition-opacity duration-200",
-            isOpen ? "opacity-100" : "opacity-0",
-          )}
-          onClick={() => setIsOpen(false)}
-          type="button"
-        />
-
+      {isMounted ? (
         <div
-          aria-describedby={descriptionId}
-          aria-labelledby={titleId}
-          aria-modal="true"
+          aria-hidden={!isOpen}
           className={cn(
-            "absolute inset-y-0 right-0 z-10 flex h-full w-[90vw] max-w-sm flex-col gap-6 overflow-y-auto border-l border-border-soft bg-background px-6 py-6 shadow-2xl transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
-            isOpen ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0",
+            "fixed inset-0 z-50 md:hidden",
+            isOpen ? "pointer-events-auto" : "pointer-events-none",
           )}
-          id="mobile-navigation-sheet"
-          role="dialog"
         >
-          <div className="flex items-start justify-between gap-4">
-            <div className="space-y-2">
-              <h2 className="font-display text-2xl text-foreground" id={titleId}>
-                Site navigation
-              </h2>
-              <p
-                className="max-w-xs text-sm leading-7 text-muted-foreground"
-                id={descriptionId}
-              >
-                Browse the main sections of the Elements Workspace site.
-              </p>
-            </div>
-            <button
-              aria-label="Close navigation menu"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border-soft text-muted-foreground transition-colors hover:bg-sage-light hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage-dark"
-              onClick={() => setIsOpen(false)}
-              ref={closeButtonRef}
-              type="button"
-            >
-              <X aria-hidden="true" className="h-5 w-5" />
-            </button>
-          </div>
-          <div className="space-y-2">
-            <p className="text-xs font-medium uppercase tracking-[0.24em] text-terra">
-              Explore
-            </p>
-            <nav aria-label="Mobile" className="grid gap-3">
-              {items.map((item) => (
-                <Link
-                  key={item.href}
-                  className="text-xl leading-8 text-foreground transition-colors hover:text-terra-dark"
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
+          <button
+            aria-label="Close navigation menu"
+            className={cn(
+              "absolute inset-0 bg-foreground/12 backdrop-blur-sm transition-opacity duration-200",
+              isOpen ? "opacity-100" : "opacity-0",
+            )}
+            onClick={() => setIsOpen(false)}
+            type="button"
+          />
+
+          <div
+            aria-describedby={descriptionId}
+            aria-labelledby={titleId}
+            aria-modal="true"
+            className={cn(
+              "absolute inset-y-0 right-0 z-10 flex h-full w-[90vw] max-w-sm flex-col gap-6 overflow-y-auto border-l border-border-soft bg-background px-6 py-6 shadow-2xl transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
+              isOpen ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0",
+            )}
+            id="mobile-navigation-sheet"
+            role="dialog"
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div className="space-y-2">
+                <h2 className="font-display text-2xl text-foreground" id={titleId}>
+                  Site navigation
+                </h2>
+                <p
+                  className="max-w-xs text-sm leading-7 text-muted-foreground"
+                  id={descriptionId}
                 >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-          <div className="mt-auto border-t border-border-soft pt-5">
-            <ButtonLink href={ctaHref} onClick={() => setIsOpen(false)}>
-              {ctaLabel}
-            </ButtonLink>
+                  Browse the main sections of the Elements Workspace site.
+                </p>
+              </div>
+              <button
+                aria-label="Close navigation menu"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border-soft text-muted-foreground transition-colors hover:bg-sage-light hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage-dark"
+                onClick={() => setIsOpen(false)}
+                ref={closeButtonRef}
+                type="button"
+              >
+                <X aria-hidden="true" className="h-5 w-5" />
+              </button>
+            </div>
+            <div className="space-y-2">
+              <p className="text-xs font-medium uppercase tracking-[0.24em] text-terra">
+                Explore
+              </p>
+              <nav aria-label="Mobile" className="grid gap-3">
+                {items.map((item) => (
+                  <Link
+                    key={item.href}
+                    className="text-xl leading-8 text-foreground transition-colors hover:text-terra-dark"
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+            <div className="mt-auto border-t border-border-soft pt-5">
+              <ButtonLink href={ctaHref} onClick={() => setIsOpen(false)}>
+                {ctaLabel}
+              </ButtonLink>
+            </div>
           </div>
         </div>
-      </div>
+      ) : null}
     </div>
   );
 }
