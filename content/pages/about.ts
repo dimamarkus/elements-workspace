@@ -34,8 +34,6 @@ export const aboutPage = {
       "A co-working space — for parents who want to stay and work while their children do the same.",
       "Outdoor access — playground, walking trails, the beach. Part of the weekly rhythm.",
     ],
-    note:
-      "3–5 real interior photos — environment, materials, light. Not staged. Jenny to provide.",
     title: "The Space",
   },
   story: {

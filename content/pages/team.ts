@@ -3,15 +3,12 @@ import { primaryCta } from "../shared/site";
 export const teamPage = {
   founder: {
     name: "Jenny Markus — Founder",
-    note: "Jenny headshot or candid",
     bio:
       "Jenny is a homeschooling parent, educator, and community builder with over a decade in K–12 education leadership. She founded Elements Workspace to build the genuinely responsive, community-rooted learning environment she needed for her own family — and couldn't find. Inspired by the work of Maria Montessori and John Holt, she designs environments where children are known, trusted, and given real room to grow.",
   },
   guideHold: {
     message:
       "Lead guide details remain unpublished until Jenny confirms they are cleared to go live.",
-    photoNote:
-      "Guide headshot or candid will be added here once approval is confirmed.",
     title: "Guides",
   },
   hero: {

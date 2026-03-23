@@ -8,6 +8,7 @@ import { PricingTable } from "../../components/marketing/pricing-table";
 import { SectionHeading } from "../../components/marketing/section-heading";
 import { SiteSection } from "../../components/marketing/site-section";
 import { programsPage } from "../../content/pages/programs";
+import { mediaSlots } from "../../content/shared/media";
 
 export const metadata: Metadata = {
   title: "Our Programs",
@@ -56,8 +57,7 @@ export default function ProgramsPage() {
           <div className="space-y-4">
             <PhotoPlaceholder
               className="min-h-80"
-              note={programsPage.starbirds.imageNote}
-              tone="sage"
+              slot={mediaSlots.programs.starbirds}
             />
             <ContentCard tone="cream">
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-sage-dark">
@@ -135,8 +135,7 @@ export default function ProgramsPage() {
           <div className="space-y-4">
             <PhotoPlaceholder
               className="min-h-80"
-              note={programsPage.moonstones.imageNote}
-              tone="terra"
+              slot={mediaSlots.programs.moonstones}
             />
             <ContentCard tone="cream">
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-sage-dark">

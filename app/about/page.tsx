@@ -6,6 +6,7 @@ import { PhotoPlaceholder } from "../../components/marketing/photo-placeholder";
 import { SectionHeading } from "../../components/marketing/section-heading";
 import { SiteSection } from "../../components/marketing/site-section";
 import { aboutPage } from "../../content/pages/about";
+import { mediaSlots } from "../../content/shared/media";
 import { contactDetails } from "../../content/shared/site";
 
 export const metadata: Metadata = {
@@ -80,10 +81,10 @@ export default function AboutPage() {
             </ul>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            <PhotoPlaceholder className="min-h-64" note={aboutPage.space.note} tone="sage" />
-            <PhotoPlaceholder className="min-h-64" note="Learning room and materials detail." tone="cream" />
-            <PhotoPlaceholder className="min-h-64" note="Common room or family arrival area." tone="terra" />
-            <PhotoPlaceholder className="min-h-64" note="Outdoor access or co-working space." tone="sage" />
+            <PhotoPlaceholder className="min-h-64" slot={mediaSlots.about.spaceOverview} />
+            <PhotoPlaceholder className="min-h-64" slot={mediaSlots.about.learningRoom} />
+            <PhotoPlaceholder className="min-h-64" slot={mediaSlots.about.commonRoom} />
+            <PhotoPlaceholder className="min-h-64" slot={mediaSlots.about.outdoorSpace} />
           </div>
         </div>
       </SiteSection>

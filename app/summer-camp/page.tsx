@@ -7,6 +7,7 @@ import { PhotoPlaceholder } from "../../components/marketing/photo-placeholder";
 import { SectionHeading } from "../../components/marketing/section-heading";
 import { SiteSection } from "../../components/marketing/site-section";
 import { summerCampPage } from "../../content/pages/summer-camp";
+import { mediaSlots } from "../../content/shared/media";
 
 export const metadata: Metadata = {
   title: "Summer Camp",
@@ -36,8 +37,7 @@ export default function SummerCampPage() {
           <PhotoPlaceholder
             badge={summerCampPage.hero.badge}
             className="min-h-96"
-            note={summerCampPage.hero.imageNote}
-            tone="sage"
+            slot={mediaSlots.summerCamp.hero}
           />
         </div>
       </SiteSection>
@@ -111,8 +111,7 @@ export default function SummerCampPage() {
           <div className="space-y-4">
             <PhotoPlaceholder
               className="min-h-72"
-              note={summerCampPage.guide.holdMessage}
-              tone="cream"
+              slot={mediaSlots.summerCamp.guide}
             />
             <ContentCard tone="white">
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-sage-dark">

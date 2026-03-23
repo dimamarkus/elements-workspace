@@ -23,8 +23,6 @@ export const programsPage = {
       "You value a calm, prepared environment responsive to where your child actually is",
       "You're looking for a close-knit community of homeschooling families",
     ],
-    imageNote:
-      "Starbirds-age child at work — practical life, art, or outdoor. Real concentration.",
     intro:
       "Starbirds is our program for children ages 3–6. Our guides understand this developmental stage in depth and get to know each child specifically — so the environment they prepare is both developmentally appropriate and personally resonant.",
     label: "Starbirds — Ages 3–6",
@@ -82,8 +80,6 @@ export const programsPage = {
       "You want intentional, responsive education in a close-knit community",
       "You're homeschooling and want a program built entirely around that context",
     ],
-    imageNote:
-      "Child 6–9 in focused independent work. Real concentration, not performance.",
     intro:
       "Moonstones is our full-day program for children ages 6–9. Our guides bring a thorough understanding of this developmental stage together with an accumulating knowledge of each child in the group. From that combination, they prepare an environment where children are appropriately challenged and working in territory that genuinely engages them.",
     label: "Moonstones — Ages 6–9",

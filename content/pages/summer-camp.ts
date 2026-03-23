@@ -15,8 +15,6 @@ export const summerCampPage = {
       "After-school director, playwright, community builder",
       "Also joining Elements as Moonstones lead guide for Fall 2026",
     ],
-    holdMessage:
-      "Guide name and photo remain unpublished until Jenny confirms they are ready to go live.",
     intro:
       "This summer program is led by one of the most experienced educators joining the Elements community — a guide who knows how to hold a close-knit group of 6–11 year olds and make every day feel purposeful and worth coming back to.",
     title: "Led by a Montessori educator with 35+ years of experience.",
@@ -25,8 +23,6 @@ export const summerCampPage = {
     badge: "4 weeks · July · Gerritsen Beach",
     dates: "July 1–31 · Monday–Thursday · Ages 6–11",
     eyebrow: "Summer 2026 · Elements Workspace",
-    imageNote:
-      "Kids outdoors or at creative work, natural light. Second photo should show beach or nature.",
     subheadline:
       "Four weeks of morning writing, afternoon world exploration, beach days, and the kind of summer your child will still be talking about in September.",
     title: "A summer of stories, places, and ideas.",

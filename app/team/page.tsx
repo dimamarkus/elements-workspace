@@ -7,6 +7,7 @@ import { PhotoPlaceholder } from "../../components/marketing/photo-placeholder";
 import { SectionHeading } from "../../components/marketing/section-heading";
 import { SiteSection } from "../../components/marketing/site-section";
 import { teamPage } from "../../content/pages/team";
+import { mediaSlots } from "../../content/shared/media";
 
 export const metadata: Metadata = {
   title: "Our Team",
@@ -42,8 +43,7 @@ export default function TeamPage() {
           </ContentCard>
           <PhotoPlaceholder
             className="min-h-96"
-            note={teamPage.founder.note}
-            tone="cream"
+            slot={mediaSlots.team.founder}
           />
         </div>
       </SiteSection>
@@ -58,8 +58,7 @@ export default function TeamPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             <PhotoPlaceholder
               className="min-h-80"
-              note={teamPage.guideHold.photoNote}
-              tone="terra"
+              slot={mediaSlots.team.guide}
             />
             <ContentCard tone="white">
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-sage-dark">

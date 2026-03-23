@@ -4,7 +4,7 @@ import {
   FormActionState,
   getFormValue,
 } from "./form-state";
-import { submitPlaceholderLead } from "./placeholder-delivery";
+import { getLeadAdapter } from "../crm/get-lead-adapter";
 import { contactFormSchema } from "../schemas/contact";
 
 export async function submitContact(
@@ -29,10 +29,23 @@ export async function submitContact(
     };
   }
 
-  await submitPlaceholderLead({
-    formType: "contact",
-    payload: parsed.data,
-  });
+  try {
+    const leadAdapter = getLeadAdapter();
+
+    await leadAdapter.submitLead({
+      email: parsed.data.email,
+      fields: parsed.data,
+      formType: "contact",
+      name: parsed.data.name,
+    });
+  } catch (_error) {
+    void _error;
+    return {
+      message:
+        "We couldn't submit your message right now. Please email jenny@elementsworkspace.com directly.",
+      status: "error",
+    };
+  }
 
   return {
     message: "Thanks — we'll get back to you within 24 hours on business days.",

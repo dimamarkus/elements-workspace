@@ -9,6 +9,7 @@ import { PhotoPlaceholder } from "../../components/marketing/photo-placeholder";
 import { SectionHeading } from "../../components/marketing/section-heading";
 import { SiteSection } from "../../components/marketing/site-section";
 import { contactPage } from "../../content/pages/contact";
+import { mediaSlots } from "../../content/shared/media";
 import { contactDetails } from "../../content/shared/site";
 
 export const metadata: Metadata = {
@@ -109,8 +110,7 @@ export default function ContactPage() {
           <div className="grid gap-4">
             <PhotoPlaceholder
               className="min-h-72"
-              note="Contact-page map or location visual placeholder."
-              tone="cream"
+              slot={mediaSlots.contact.location}
             />
             <ContentCard tone="white">
               <h2 className="font-display text-3xl leading-tight text-foreground">

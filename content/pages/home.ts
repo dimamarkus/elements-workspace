@@ -40,11 +40,9 @@ export const homePage = {
     ],
   },
   hero: {
-    accentPhotoNote: "Outdoor moment, snack time, or community.",
     badge: "Enrolling for Fall 2026 · Early-bird closes July 1",
     eyebrow: "Elements Workspace",
     headline: "A place for homeschooling families in Brooklyn.",
-    photoNote: "Best candid of kids engaged in the space. Natural light. Not posed.",
     primaryAction: primaryCta,
     secondaryAction: secondaryCta,
     subheadline: "Cozy in size. Serious about learning. Deep in community.",

@@ -6,6 +6,7 @@ import { LocationStrip } from "../components/marketing/location-strip";
 import { PhotoPlaceholder } from "../components/marketing/photo-placeholder";
 import { SiteSection } from "../components/marketing/site-section";
 import { homePage } from "../content/pages/home";
+import { mediaSlots } from "../content/shared/media";
 
 export const metadata: Metadata = {
   title: "Homeschool Enrichment Center in Gerritsen Beach, Brooklyn",
@@ -44,13 +45,11 @@ export default function Home() {
             <PhotoPlaceholder
               badge={homePage.hero.badge}
               className="min-h-96"
-              note={homePage.hero.photoNote}
-              tone="sage"
+              slot={mediaSlots.homepage.heroMain}
             />
             <PhotoPlaceholder
               className="min-h-72"
-              note={homePage.hero.accentPhotoNote}
-              tone="terra"
+              slot={mediaSlots.homepage.heroAccent}
             />
           </div>
         </div>
