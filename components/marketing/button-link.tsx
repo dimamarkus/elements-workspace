@@ -15,7 +15,7 @@ const variantClasses: Record<NonNullable<ButtonLinkProps["variant"]>, string> = 
   ghost:
     "border border-white/30 text-white hover:bg-white/10 focus-visible:outline-white",
   light:
-    "bg-white text-[#2a2822] hover:bg-white/90 focus-visible:outline-white",
+    "bg-white text-terra-dark hover:bg-white/90 focus-visible:outline-white",
   primary:
     "bg-sage text-white hover:bg-sage-dark focus-visible:outline-sage-dark",
   secondary:
