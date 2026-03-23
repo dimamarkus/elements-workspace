@@ -10,7 +10,7 @@ import { SiteContainer } from "./site-container";
 
 export function SiteHeader() {
   return (
-    <header className="border-b border-border-soft bg-background/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-border-soft bg-background/95 backdrop-blur">
       <SiteContainer className="flex flex-col gap-4 py-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex items-center justify-between gap-4">
           <Link

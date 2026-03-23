@@ -7,10 +7,14 @@ type ButtonLinkProps = {
   children: ReactNode;
   className?: string;
   href: string;
-  variant?: "primary" | "secondary";
+  variant?: "ghost" | "light" | "primary" | "secondary";
 };
 
 const variantClasses: Record<NonNullable<ButtonLinkProps["variant"]>, string> = {
+  ghost:
+    "border border-white/30 text-white hover:bg-white/10 focus-visible:outline-white",
+  light:
+    "bg-white text-terra-dark hover:bg-white/90 focus-visible:outline-white",
   primary:
     "bg-sage text-white hover:bg-sage-dark focus-visible:outline-sage-dark",
   secondary:
@@ -23,15 +27,22 @@ export function ButtonLink({
   href,
   variant = "primary",
 }: ButtonLinkProps) {
+  const classes = cn(
+    "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
+    variantClasses[variant],
+    className,
+  );
+
+  if (href.startsWith("http://") || href.startsWith("https://")) {
+    return (
+      <a className={classes} href={href}>
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <Link
-      className={cn(
-        "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
-        variantClasses[variant],
-        className,
-      )}
-      href={href}
-    >
+    <Link className={classes} href={href}>
       {children}
     </Link>
   );

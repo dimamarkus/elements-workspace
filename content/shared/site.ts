@@ -23,6 +23,11 @@ export const secondaryCta: CallToAction = {
   label: "Join the Fall 2026 Waitlist",
 };
 
+export const consultationCta: CallToAction = {
+  href: "https://calendly.com/elementsworkspace/elements-workspace-get-to-know-you-call",
+  label: "Schedule a Call",
+};
+
 export const navigationItems: NavigationItem[] = [
   { href: "/about", label: "About" },
   { href: "/programs", label: "Programs" },
@@ -38,4 +43,6 @@ export const contactDetails = {
   instagramHandle: "@elementsworkspace",
   instagramUrl: "https://instagram.com/elementsworkspace",
   phone: "646-780-9062",
+  sponsorNote:
+    "© 2026 Elements Workspace. Fiscally sponsored by Metsada, a 501(c)(3) nonprofit.",
 };
