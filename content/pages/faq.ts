@@ -2,7 +2,7 @@ export const faqPage = {
   hero: {
     description: "Questions we actually get.",
     eyebrow: "FAQ",
-    title: "Questions we actually get.",
+    title: "Frequently Asked Questions",
   },
   items: [
     {
