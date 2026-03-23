@@ -23,27 +23,27 @@ The actual image files should be dropped into:
 ## Workflow
 
 1. Drop the real image file into the exact `dropPath` shown in `content/shared/media.ts`.
-2. In that same file, flip the matching slot's `isReady` value from `false` to `true`.
-3. Make sure the `alt` text still accurately describes the real image.
+2. Make sure the `alt` text still accurately describes the real image.
+3. Redeploy if needed for your hosting setup.
 
 ## Why It Works This Way
 
 - All image slots live in one file.
 - All placeholder notes and alt text live in one file.
 - Page components do not need to be edited when an image changes.
+- The site automatically detects whether the expected file exists.
 
 ## Example
 
 If you want to replace the homepage hero image:
 
 1. Add the file at `public/images/homepage/hero-main.jpg`
-2. Update the matching slot in `content/shared/media.ts`
+2. Leave the slot metadata in `content/shared/media.ts` alone unless the path or alt text needs to change.
 
 ```ts
 heroMain: {
   publicPath: "/images/homepage/hero-main.jpg",
   dropPath: "public/images/homepage/hero-main.jpg",
-  isReady: true,
   // ...
 }
 ```
@@ -53,5 +53,4 @@ heroMain: {
 Until a real asset is ready:
 
 - leave the file path as-is
-- keep `isReady: false`
 - the UI will continue rendering the branded placeholder card instead

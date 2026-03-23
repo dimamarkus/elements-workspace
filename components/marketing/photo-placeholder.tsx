@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import type { MediaSlot } from "../../content/shared/media";
 import { cn } from "../../lib/cn";
+import { hasPublicImage } from "../../lib/media/has-public-image";
 
 type PhotoPlaceholderProps = {
   badge?: string;
@@ -20,6 +21,9 @@ export function PhotoPlaceholder({
   className,
   slot,
 }: PhotoPlaceholderProps) {
+  const hasRealImage = hasPublicImage(slot.dropPath);
+  const showDevelopmentInstructions = process.env.NODE_ENV !== "production";
+
   return (
     <div
       className={cn(
@@ -28,7 +32,7 @@ export function PhotoPlaceholder({
         className,
       )}
     >
-      {slot.isReady ? (
+      {hasRealImage ? (
         <Image
           alt={slot.alt}
           className="object-cover"
@@ -42,7 +46,7 @@ export function PhotoPlaceholder({
           {badge}
         </span>
       ) : null}
-      {slot.isReady ? (
+      {hasRealImage ? (
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-black/25 to-transparent" />
       ) : (
         <div className="mt-auto max-w-sm space-y-3">
@@ -50,10 +54,12 @@ export function PhotoPlaceholder({
             Photo Placeholder
           </p>
           <p className="text-base leading-7 text-muted-foreground">{slot.note}</p>
-          <p className="text-sm leading-7 text-muted-foreground/80">
-            Drop replacement at <code>{slot.dropPath}</code> and then flip{" "}
-            <code>isReady</code> in <code>content/shared/media.ts</code>.
-          </p>
+          {showDevelopmentInstructions ? (
+            <p className="text-sm leading-7 text-muted-foreground/80">
+              Drop replacement at <code>{slot.dropPath}</code>. The site will
+              start using it automatically.
+            </p>
+          ) : null}
         </div>
       )}
     </div>

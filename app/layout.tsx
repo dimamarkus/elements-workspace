@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { DM_Sans, Lora } from "next/font/google";
 
 import { SiteFooter } from "../components/marketing/site-footer";
@@ -32,6 +32,11 @@ export const metadata: Metadata = {
     default: "Elements Workspace",
     template: "%s | Elements Workspace",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

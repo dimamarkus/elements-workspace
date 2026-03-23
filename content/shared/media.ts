@@ -3,7 +3,6 @@ export type MediaTone = "cream" | "sage" | "terra";
 export type MediaSlot = {
   alt: string;
   dropPath: string;
-  isReady: boolean;
   note: string;
   publicPath: string;
   tone: MediaTone;
@@ -18,7 +17,6 @@ export const mediaSlots = {
     commonRoom: createMediaSlot({
       alt: "The common room where families gather at Elements Workspace.",
       dropPath: "public/images/about/common-room.jpg",
-      isReady: false,
       note: "Common room or family arrival area.",
       publicPath: "/images/about/common-room.jpg",
       tone: "terra",
@@ -26,7 +24,6 @@ export const mediaSlots = {
     learningRoom: createMediaSlot({
       alt: "A learning room at Elements Workspace with natural light and prepared materials.",
       dropPath: "public/images/about/learning-room.jpg",
-      isReady: false,
       note: "Learning room and materials detail.",
       publicPath: "/images/about/learning-room.jpg",
       tone: "cream",
@@ -34,7 +31,6 @@ export const mediaSlots = {
     outdoorSpace: createMediaSlot({
       alt: "Outdoor access or parent co-working area at Elements Workspace.",
       dropPath: "public/images/about/outdoor-space.jpg",
-      isReady: false,
       note: "Outdoor access or co-working space.",
       publicPath: "/images/about/outdoor-space.jpg",
       tone: "sage",
@@ -42,7 +38,6 @@ export const mediaSlots = {
     spaceOverview: createMediaSlot({
       alt: "Interior view of the Elements Workspace environment.",
       dropPath: "public/images/about/space-overview.jpg",
-      isReady: false,
       note: "3–5 real interior photos — environment, materials, light. Not staged. Jenny to provide.",
       publicPath: "/images/about/space-overview.jpg",
       tone: "sage",
@@ -52,7 +47,6 @@ export const mediaSlots = {
     location: createMediaSlot({
       alt: "Exterior or location reference image for Elements Workspace.",
       dropPath: "public/images/contact/location.jpg",
-      isReady: false,
       note: "Exterior location shot, neighborhood reference, or map-style visual.",
       publicPath: "/images/contact/location.jpg",
       tone: "cream",
@@ -62,7 +56,6 @@ export const mediaSlots = {
     heroAccent: createMediaSlot({
       alt: "Outdoor or community moment at Elements Workspace.",
       dropPath: "public/images/homepage/hero-accent.jpg",
-      isReady: false,
       note: "Outdoor moment, snack time, or community.",
       publicPath: "/images/homepage/hero-accent.jpg",
       tone: "terra",
@@ -70,7 +63,6 @@ export const mediaSlots = {
     heroMain: createMediaSlot({
       alt: "Children engaged in work at Elements Workspace.",
       dropPath: "public/images/homepage/hero-main.jpg",
-      isReady: false,
       note: "Best candid of kids engaged in the space. Natural light. Not posed.",
       publicPath: "/images/homepage/hero-main.jpg",
       tone: "sage",
@@ -80,7 +72,6 @@ export const mediaSlots = {
     moonstones: createMediaSlot({
       alt: "A Moonstones-age child working independently at Elements Workspace.",
       dropPath: "public/images/programs/moonstones.jpg",
-      isReady: false,
       note: "Child 6–9 in focused independent work. Real concentration, not performance.",
       publicPath: "/images/programs/moonstones.jpg",
       tone: "terra",
@@ -88,7 +79,6 @@ export const mediaSlots = {
     starbirds: createMediaSlot({
       alt: "A Starbirds-age child engaged in work at Elements Workspace.",
       dropPath: "public/images/programs/starbirds.jpg",
-      isReady: false,
       note: "Starbirds-age child at work — practical life, art, or outdoor. Real concentration.",
       publicPath: "/images/programs/starbirds.jpg",
       tone: "sage",
@@ -98,7 +88,6 @@ export const mediaSlots = {
     guide: createMediaSlot({
       alt: "Lead summer guide portrait for Elements Workspace.",
       dropPath: "public/images/summer-camp/guide.jpg",
-      isReady: false,
       note: "Guide photo will be added here once Jenny confirms it is ready to publish.",
       publicPath: "/images/summer-camp/guide.jpg",
       tone: "cream",
@@ -106,7 +95,6 @@ export const mediaSlots = {
     hero: createMediaSlot({
       alt: "Children outdoors or at creative work during summer camp.",
       dropPath: "public/images/summer-camp/hero.jpg",
-      isReady: false,
       note: "Kids outdoors or at creative work, natural light. Second photo should show beach or nature.",
       publicPath: "/images/summer-camp/hero.jpg",
       tone: "sage",
@@ -116,7 +104,6 @@ export const mediaSlots = {
     founder: createMediaSlot({
       alt: "Portrait of Jenny Markus, founder of Elements Workspace.",
       dropPath: "public/images/team/jenny-markus.jpg",
-      isReady: false,
       note: "Jenny headshot or candid.",
       publicPath: "/images/team/jenny-markus.jpg",
       tone: "cream",
@@ -124,7 +111,6 @@ export const mediaSlots = {
     guide: createMediaSlot({
       alt: "Guide portrait for the Elements Workspace team page.",
       dropPath: "public/images/team/guide.jpg",
-      isReady: false,
       note: "Guide headshot or candid will be added here once approval is confirmed.",
       publicPath: "/images/team/guide.jpg",
       tone: "terra",
