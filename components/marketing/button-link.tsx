@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
+import type { MouseEventHandler, ReactNode } from "react";
 
 import { cn } from "../../lib/cn";
 
@@ -7,6 +7,7 @@ type ButtonLinkProps = {
   children: ReactNode;
   className?: string;
   href: string;
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
   variant?: "ghost" | "light" | "primary" | "secondary";
 };
 
@@ -25,6 +26,7 @@ export function ButtonLink({
   children,
   className,
   href,
+  onClick,
   variant = "primary",
 }: ButtonLinkProps) {
   const classes = cn(
@@ -35,14 +37,14 @@ export function ButtonLink({
 
   if (href.startsWith("http://") || href.startsWith("https://")) {
     return (
-      <a className={classes} href={href}>
+      <a className={classes} href={href} onClick={onClick}>
         {children}
       </a>
     );
   }
 
   return (
-    <Link className={classes} href={href}>
+    <Link className={classes} href={href} onClick={onClick}>
       {children}
     </Link>
   );

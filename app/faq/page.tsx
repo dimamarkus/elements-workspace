@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { FaqItem } from "../../components/marketing/faq-item";
+import { Accordion } from "../../components/ui/accordion";
 import { PageHero } from "../../components/marketing/page-hero";
 import { SiteSection } from "../../components/marketing/site-section";
 import { JsonLd } from "../../components/seo/json-ld";
@@ -26,15 +27,16 @@ export default function FaqPage() {
       />
 
       <SiteSection tone="white">
-        <div className="space-y-4">
-          {faqPage.items.map((item) => (
+        <Accordion className="space-y-4" collapsible type="single">
+          {faqPage.items.map((item, index) => (
             <FaqItem
               key={item.question}
               answer={item.answer}
               question={item.question}
+              value={`faq-item-${index + 1}`}
             />
           ))}
-        </div>
+        </Accordion>
       </SiteSection>
     </main>
   );
